@@ -7,5 +7,4 @@ class ManagerProfileController < ApplicationController
     # params.require(:manager_profile).permit(:name, user_attributes: [ :email, :password, :password_confirmation, :address, :id ])
     params.require(:manager_profile).permit!
   end
-
 end
