@@ -48,3 +48,5 @@ group :development do
 end
 
 gem 'pry-rails'
+gem 'angular-rails-templates'
+gem 'sprockets', '2.12.3'
