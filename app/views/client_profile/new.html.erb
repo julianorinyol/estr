@@ -1,6 +1,9 @@
-<%= form_for :manager_profile, url: {action: 'create'}  do |f|%>
-  <%= f.label :name, "name" %>
-  <%= f.text_field :name  %>
+<%= form_for :client_profile, url: {action: 'create'}  do |f|%>
+  <%= f.label :first_name, "first name" %>
+  <%= f.text_field :first_name  %>
+  <%= f.label :last_name, "last name" %>
+  <%= f.text_field :last_name  %>
+
   <br>
 
   <%= f.fields_for :user_attributes do |ff| %>
