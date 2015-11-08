@@ -1,5 +1,4 @@
-// angular.module('estrApp', ['ui.router', 'templates', 'Devise'])
-angular.module('estrApp', ['ui.router', 'templates'])
+angular.module('estrApp', ['ui.router', 'templates', 'Devise'])
 .config([
 '$stateProvider',
 '$urlRouterProvider',
