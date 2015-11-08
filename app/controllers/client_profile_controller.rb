@@ -1,6 +1,10 @@
 class ClientProfileController < ApplicationController
   def create
-    @client_profile = ClientProfile.new(client_profile_params)
+    @client_profile = ClientProfile.create(client_profile_params)
+  end
+
+  def new
+    @client_profile = ClientProfile.new
   end
 
   def client_profile_params
