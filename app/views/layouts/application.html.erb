@@ -6,9 +6,19 @@
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body ng-app='estrApp'>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <ui-view></ui-view>
+  </div>
+</div>
 
-<%= yield %>
+<script type="text/ng-template" id="/home.html">
+  <div>
+    <h1>estr /home</h1>
+  </div>
+</script>
+
 
 </body>
 </html>

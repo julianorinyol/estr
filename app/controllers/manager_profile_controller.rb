@@ -1,6 +1,5 @@
 class ManagerProfileController < ApplicationController
   def create
-    binding.pry
     @manager_profile = ManagerProfile.create(manager_profile_params)
   end
 
