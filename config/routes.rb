@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
   resources :manager_profile
 
+  get 'fish' => 'application#fish'
+
 
   #Api
   namespace :api do
