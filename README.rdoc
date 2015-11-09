@@ -26,3 +26,30 @@ Things you may want to cover:
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
+
+
+API Documentation
+
+get all appointments for business
+-GET user/:id/appointments  =>  'api::v1::appointments#index'
+add an appt 
+-POST business/:id/appointments => 'api::v1::appointments#create'
+mark appt inactive
+PUT business/:id/appointments/:id => 'api::v1::appointments#mark_inactive'
+mark appt done
+-PUT business/:id/appointments/:id/mark_done => 'api::v1::appointments#mark_done'
+-move appt up one place
+-PUT business/:id/appointments/:id/move_up => 'api::v1::appointments#move_up'
+move appt down one place
+-PUT business/:id/appointments/:id/move_up => 'api::v1::appointments#move_down'
+get the total current wait time for a business
+-GET business/:id/waittime => 'api::v1::business#wait_time'
+add delay (extra time) to a businesses delay time
+-PUT business/:id/add_delay_time => 'api::v1::business#add_delay_time'
+-PUT business/:id/decrease_delay_time => 'api::v1::business#decrease_delay_time'
+USER
+get all business names
+register user
+user update
+delete my us account
+
