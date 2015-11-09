@@ -7,7 +7,7 @@ class Api::V1::UsersController < Api::V1::BaseController
     def create
     user = User.new(create_params)
     return api_error(status: 422, errors: user.errors) unless user.valid?
-
+    user.api_key = user.generate_api_key
     user.save!
     user.activate
 
