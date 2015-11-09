@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 
-
+gem 'pundit'
+gem 'active_hash_relation'
+gem 'active_model_serializers'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
 # Use sqlite3 as the database for Active Record
@@ -49,5 +51,6 @@ end
 
 gem 'pry-rails'
 gem 'angular-rails-templates'
+
 gem 'sprockets', '2.12.3' 
 gem 'angular_rails_csrf'

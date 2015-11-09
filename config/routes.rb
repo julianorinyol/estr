@@ -8,6 +8,14 @@ Rails.application.routes.draw do
 
   resources :manager_profile
 
+
+  #Api
+  namespace :api do
+    namespace :v1 do
+      resources :users, only: [:create, :show, :update, :destroy]
+      resources :appointments, only: [:index, :create, :show, :update, :destroy]
+    end
+  end
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
