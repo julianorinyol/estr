@@ -21,16 +21,21 @@ class Api::V1::BaseController < ApplicationController
   end
 
   def jsonapi_format(errors)
-  return errors if errors.is_a? String
-  errors_hash = {}
-  errors.messages.each do |attribute, error|
-    array_hash = []
-    error.each do |e|
-      array_hash << {attribute: attribute, message: e}
+    return errors if errors.is_a? String
+    errors_hash = {}
+    errors.messages.each do |attribute, error|
+      array_hash = []
+      error.each do |e|
+        array_hash << {attribute: attribute, message: e}
+      end
+      errors_hash.merge!({ attribute => array_hash })
     end
-    errors_hash.merge!({ attribute => array_hash })
-  end
 
-  return errors_hash
-end
+    return errors_hash
+  end
+  def restrict_access
+      authenticate_or_request_with_http_token do |token, options|
+           User.where(api_key: token).exists?
+      end
+  end
 end

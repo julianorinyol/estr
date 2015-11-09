@@ -1,3 +1,10 @@
+// angular.module('estrApp', ['Devise']).
+    // config(function(AuthProvider) {
+    //     AuthProvider.registerPath('/api/v1/users');
+    //     AuthProvider.registerMethod('POST');
+    //     AuthProvider.resourceName('user');
+    // });
+
 angular.module('estrApp', ['ui.router', 'templates', 'Devise'])
 .config([
   '$stateProvider',
@@ -38,7 +45,14 @@ angular.module('estrApp', ['ui.router', 'templates', 'Devise'])
           $state.go('home');
         })
       }]
-      
+    })
+    .state('register-test', {
+      url: '/register-test',
+      templateUrl: 'auth/_register-manager.html',
+      controller: 'AuthCtrl',
+      onEnter: ['$state', 'Auth', function($state, Auth) {
+        
+      }]
     });
 
     $urlRouterProvider.otherwise('home');

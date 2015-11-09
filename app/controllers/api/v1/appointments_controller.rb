@@ -1,5 +1,5 @@
 class Api::V1::AppointmentsController < Api::V1::BaseController
-  # before_filter :AUTHENTICATE USER!!!!!!!!
+  before_action :restrict_access, only: [:index]
 
   def index
     # user = User.find(params)
