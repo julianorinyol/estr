@@ -1,3 +1,3 @@
-Class AppointmentsUsers < ActiveRecord::Base
+class AppointmentsUsers < ActiveRecord::Base
   has_and_belongs_to_many :users
 end
