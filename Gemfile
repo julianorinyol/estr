@@ -50,4 +50,4 @@ end
 gem 'pry-rails'
 gem 'angular-rails-templates'
 gem 'sprockets', '2.12.3' 
-  gem 'angular_rails_csrf'
+gem 'angular_rails_csrf'
