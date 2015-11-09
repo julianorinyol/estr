@@ -11,15 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151109000316) do
+ActiveRecord::Schema.define(version: 20151109003430) do
 
   create_table "appointments", force: :cascade do |t|
-    t.integer  "user_id"
-    t.integer  "client_id"
     t.datetime "appointment_date"
     t.boolean  "finished",         default: false
     t.datetime "created_at",                       null: false
     t.datetime "updated_at",                       null: false
+  end
+
+  create_table "appointments_users", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "appointment_id"
   end
 
   create_table "users", force: :cascade do |t|
