@@ -5,7 +5,7 @@
     //     AuthProvider.resourceName('user');
     // });
 
-angular.module('estrApp', ['ui.router', 'templates', 'Devise'])
+angular.module('estrApp', ['ui.router', 'templates', 'Devise','ngCookies'])
 .config([
   '$stateProvider',
   '$urlRouterProvider',

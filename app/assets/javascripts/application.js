@@ -14,4 +14,5 @@
 //= require AngularDevise/lib/devise
 //= require angular-rails-templates
 //= require angular-ui-router
+//= require angular-cookies
 //= require_tree .

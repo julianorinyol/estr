@@ -1,14 +1,13 @@
 angular.module('estrApp')
 .controller('MainCtrl', [
-  '$scope', '$http',
-  function($scope, $http){
+  '$scope', '$http', '$cookies',
+  function($scope, $http, $cookies){
     $scope.test = 'testy';
-
       $http({
     method: 'GET',
-    url: 'api/v1/users/' + 2 + '/appointments',
+    url: 'api/v1/users/' + 1 + '/appointments',
  headers:{
-   Authorization: 'Token token="bb370674b525acee4175fd79c9ceb92f"',
+   Authorization: 'Token token="' + $cookies.get('api_key') + '"',
  }
   }).then(function successCallback(response) {
       console.log('success', response);
