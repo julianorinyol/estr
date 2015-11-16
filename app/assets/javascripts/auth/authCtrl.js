@@ -13,7 +13,14 @@ function($scope, $state, Auth, $http, $cookies, $rootScope){
   //  });
   // };
    $scope.login = function() {
-    // return $http.post
+    return $http.post('/api/v1/login', $scope.user)
+      .then(function successCallback(response) {
+      $cookies.put('api_key', response.data.api_key);
+      console.log('login success', response);
+    }, function errorCallback(response) {
+      console.log('login failure', response);
+    });
+
   };
 
 

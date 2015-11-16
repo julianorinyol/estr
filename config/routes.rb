@@ -1,3 +1,4 @@
+
 Rails.application.routes.draw do
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
@@ -10,6 +11,10 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :users, only: [:create, :show, :update, :destroy]
+      # get 'login' => 'sessions#new'
+      post 'login' => 'sessions#create'
+      delete 'logout' => 'sessions#destroy'
+
       get 'users/:id/appointments' => 'appointments#index'
       post 'business/:id/appointments' => 'appointments#create'
       put 'business/:id/appointments/:id/mark_inactive' => 'appointments#mark_inactive'
